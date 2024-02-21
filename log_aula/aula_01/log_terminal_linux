@@ -1,0 +1,161 @@
+aluno: ~$ mkdir Poo2
+aluno: ~$ cd Poo2
+aluno: Poo2$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/aluno/Poo2/.git/
+aluno: Poo2$ git add .gitgnore
+fatal: pathspec '.gitgnore' did not match any files
+aluno: Poo2$ git add .gitgnore
+fatal: pathspec '.gitgnore' did not match any files
+aluno: Poo2$ git add .gitgnore
+aluno: Poo2$ git commit -m "add gitgnore"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'aluno@sj-lin-sidi-10.(none)')
+aluno: Poo2$ git config --global user.email gian.s12@aluno.ifsc.edu.br
+aluno: Poo2$ git config --global user.name GianGabrielF
+aluno: Poo2$ git commit -m "add gitgnore"
+[master (root-commit) 69443d1] add gitgnore
+ 1 file changed, 565 insertions(+)
+ create mode 100644 .gitgnore
+aluno: Poo2$ git remote add origin https://github.com/GianGabrielF/Poo2.git
+aluno: Poo2$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/GianGabrielF/Poo2.git'
+aluno: Poo2$ git status
+On branch master
+nothing to commit, working tree clean
+aluno: Poo2$ git log
+commit 69443d139646680d4be723239fd6762fbaf9b7ec (HEAD -> master)
+Author: GianGabrielF <gian.s12@aluno.ifsc.edu.br>
+Date:   Wed Feb 21 11:15:00 2024 -0300
+
+    add gitgnore
+aluno: Poo2$ ls -la
+total 24
+drwxr-xr-x  3 aluno aluno  4096 fev 21 11:13 .
+drwxr-xr-x 28 aluno aluno  4096 fev 21 11:17 ..
+drwxr-xr-x  8 aluno aluno  4096 fev 21 11:17 .git
+-rw-r--r--  1 aluno aluno 10318 fev 21 11:13 .gitgnore
+aluno: Poo2$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/GianGabrielF/Poo2.git'
+aluno: Poo2$ rm -rf .git
+aluno: Poo2$ 
+aluno: Poo2$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/aluno/Poo2/.git/
+aluno: Poo2$ git branch -m main
+aluno: Poo2$ 
+
+
+
+
+
+
+
+
+
+aluno: Poo2$ git add .
+aluno: Poo2$ git commit -m "gitignore"
+[main (root-commit) b2cdf47] gitignore
+ 1 file changed, 565 insertions(+)
+ create mode 100644 .gitgnore
+aluno: Poo2$ git tree
+git: 'tree' is not a git command. See 'git --help'.
+
+The most similar command is
+	mktree
+aluno: Poo2$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+aluno: Poo2$ git log
+commit b2cdf47571773829aea51716d996b28daafc86dd (HEAD -> main)
+Author: GianGabrielF <gian.s12@aluno.ifsc.edu.br>
+Date:   Wed Feb 21 11:18:13 2024 -0300
+
+    gitignore
+aluno: Poo2$ git status
+On branch main
+nothing to commit, working tree clean
+aluno: Poo2$ git remote add origin https://github.com/GianGabrielF/Poo2.git
+aluno: Poo2$ 
+aluno: Poo2$ git push -u origin main
+Username for 'https://github.com': GianGabrielF
+Password for 'https://GianGabrielF@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 4.45 KiB | 4.45 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GianGabrielF/Poo2.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+aluno: Poo2$ 
+aluno: Poo2$ echo -e "ola mundo\n" > README.md
+aluno: Poo2$ git add README.md
+aluno: Poo2$ git commit -m "add README"
+[main 2fa6c83] add README
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+aluno: Poo2$ git push
+Username for 'https://github.com': GianGabrielF
+Password for 'https://GianGabrielF@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 296.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GianGabrielF/Poo2.git
+   b2cdf47..2fa6c83  main -> main
+aluno: Poo2$ 
+aluno: Poo2$ mkdir log_aula
+aluno: Poo2$ cd log_aula
+aluno: log_aula$ mkdir aula 01
+aluno: log_aula$ cd 
+01/   aula/ 
+aluno: log_aula$ mkdir aula_01
+aluno: log_aula$ cd aula_01/
+aluno: aula_01$ 
+
