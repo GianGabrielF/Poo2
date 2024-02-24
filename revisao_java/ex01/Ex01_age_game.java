@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex01{
+public class Ex01_age_game {
 
     public static void main(String[] args){
 

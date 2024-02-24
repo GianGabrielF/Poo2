@@ -1,4 +1,4 @@
-public class Ex02 {
+public class Ex02_Calculo_notas {
 
     public static void main(String[] args){
         int p1 = Integer.parseInt(args[1]);
