@@ -1,0 +1,84 @@
+aluno: ~$ cd Poo2
+aluno: Poo2$ cd aula_03_Total
+bash: cd: aula_03_Total: Arquivo ou diretório inexistente
+aluno: Poo2$ cd Aula_03_Total
+bash: cd: Aula_03_Total: Arquivo ou diretório inexistente
+aluno: Poo2$ cd
+aluno: ~$ cd Aula_03_Total
+bash: cd: Aula_03_Total: Arquivo ou diretório inexistente
+aluno: ~$ cd Aula-3-Total
+bash: cd: Aula-3-Total: Arquivo ou diretório inexistente
+aluno: ~$ cd Poo2
+aluno: Poo2$ cd 
+Aula-3-Total/ .git/         log_aula/     revisao_java/ 
+aluno: Poo2$ cd Aula-3-Total
+aluno: Aula-3-Total$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	./
+	../log_aula/instrucoes vscode fazer projeto java
+
+nothing added to commit but untracked files present (use "git add" to track)
+aluno: Aula-3-Total$ git add .
+aluno: Aula-3-Total$ git commit -m "Aula03"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'aluno@sj-lin-sidi-10.(none)')
+aluno: Aula-3-Total$ git config --global user.name GG
+aluno: Aula-3-Total$ git config --global user.email gian.s12@aluno.ifsc.edu.br
+aluno: Aula-3-Total$ git commit -m "Aula03"
+[main 109a508] Aula03
+ 25 files changed, 893 insertions(+)
+ create mode 100644 Aula-3-Total/aula03,5/.gitattributes
+ create mode 100644 Aula-3-Total/aula03,5/.gitignore
+ create mode 100644 Aula-3-Total/aula03,5/app/build.gradle
+ create mode 100644 Aula-3-Total/aula03,5/app/src/main/java/engtelecom/poo/App.java
+ create mode 100644 Aula-3-Total/aula03,5/app/src/test/java/engtelecom/poo/AppTest.java
+ create mode 100644 Aula-3-Total/aula03,5/gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 Aula-3-Total/aula03,5/gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 Aula-3-Total/aula03,5/gradlew
+ create mode 100644 Aula-3-Total/aula03,5/gradlew.bat
+ create mode 100644 Aula-3-Total/aula03,5/settings.gradle
+ create mode 100644 Aula-3-Total/aula03/.gitattributes
+ create mode 100644 Aula-3-Total/aula03/.gitignore
+ create mode 100644 Aula-3-Total/aula03/.vscode/settings.json
+ create mode 100644 Aula-3-Total/aula03/app/bin/main/br/edu/ifsc/sj/engtelecom/poo/App.class
+ create mode 100644 Aula-3-Total/aula03/app/bin/test/br/edu/ifsc/sj/engtelecom/poo/AppTest.class
+ create mode 100644 Aula-3-Total/aula03/app/build.gradle
+ create mode 100644 Aula-3-Total/aula03/app/src/main/java/br/edu/ifsc/sj/engtelecom/poo/App.java
+ create mode 100644 Aula-3-Total/aula03/app/src/test/java/br/edu/ifsc/sj/engtelecom/poo/AppTest.java
+ create mode 100644 Aula-3-Total/aula03/gradle.properties
+ create mode 100644 Aula-3-Total/aula03/gradle/libs.versions.toml
+ create mode 100644 Aula-3-Total/aula03/gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 Aula-3-Total/aula03/gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 Aula-3-Total/aula03/gradlew
+ create mode 100644 Aula-3-Total/aula03/gradlew.bat
+ create mode 100644 Aula-3-Total/aula03/settings.gradle
+aluno: Aula-3-Total$ git push
+Username for 'https://github.com': GianGabrielF
+Password for 'https://GianGabrielF@github.com': 
+Enumerating objects: 76, done.
+Counting objects: 100% (76/76), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (75/75), 103.81 KiB | 20.76 MiB/s, done.
+Total 75 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/GianGabrielF/Poo2
+   777ebae..109a508  main -> main
+aluno: Aula-3-Total$ 
+
+
