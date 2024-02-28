@@ -1,0 +1,228 @@
+aluno: ~$ git clone https://github.com/GianGabrielF/Poo2
+Cloning into 'Poo2'...
+remote: Enumerating objects: 137, done.
+remote: Counting objects: 100% (137/137), done.
+remote: Compressing objects: 100% (74/74), done.
+remote: Total 137 (delta 19), reused 118 (delta 11), pack-reused 0
+Receiving objects: 100% (137/137), 119.67 KiB | 4.43 MiB/s, done.
+Resolving deltas: 100% (19/19), done.
+aluno: ~$ cd Poo2
+aluno: Poo2$ cd ..
+aluno: ~$ mkdir aula_04
+aluno: ~$ cd aula_04/
+aluno: aula_04$ gradle init
+
+Welcome to Gradle 8.5!
+
+Here are the highlights of this release:
+ - Support for running on Java 21
+ - Faster first use with Kotlin DSL
+ - Improved error and warning messages
+
+For more details see https://docs.gradle.org/8.5/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 
+
+Generate multiple subprojects for application? (default: no) [yes, no] 
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] 2
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit Jupiter) [1..4] 
+
+Project name (default: aula_04): 
+Source package (default: aula_04): engtelecom.poo
+Enter target version of Java (min. 7) (default: 21): 
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] 
+
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.5/samples/sample_building_java_applications.html
+
+BUILD SUCCESSFUL in 1m 4s
+2 actionable tasks: 2 executed
+aluno: aula_04$ code .
+aluno: aula_04$ code .
+aluno: aula_04$ 
+aluno: aula_04$ cd ..
+aluno: ~$ mkdir aula_04_archives
+aluno: ~$ cd aula_04
+aula_04/          aula_04_archives/ 
+aluno: ~$ cd aula_04_archives/
+aluno: aula_04_archives$ gradle init
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 3
+
+Generate multiple subprojects for application? (default: no) [yes, no] no
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] Groovy
+Please enter a value between 1 and 2: 2
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit Jupiter) [1..4] 4
+
+Project name (default: aula_04_archives): 
+Source package (default: aula_04_archives): engtelecom.poo
+Enter target version of Java (min. 7) (default: 21): 21
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]                                       no
+
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.5/samples/sample_building_java_applications.html
+
+BUILD SUCCESSFUL in 47s
+2 actionable tasks: 2 executed
+aluno: aula_04_archives$ code .
+aluno: aula_04_archives$ code .
+aluno: aula_04_archives$ 
+aluno: aula_04_archives$ gradle run
+
+> Task :app:run
+Hello World!
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+aluno: aula_04_archives$ gradle run
+
+> Task :app:run
+olá mundo
+
+BUILD SUCCESSFUL in 448ms
+2 actionable tasks: 2 executed
+aluno: aula_04_archives$ gradle run
+
+> Task :app:run
+olá mundo
+
+BUILD SUCCESSFUL in 374ms
+2 actionable tasks: 1 executed, 1 up-to-date
+aluno: aula_04_archives$ gradle run
+olá mundo
+aluno: aula_04_archives$ 
+aluno: aula_04_archives$ ./gradlew run
+olá mundo
+aluno: aula_04_archives$ ./gradlew run --args "Gian"
+olá mundo
+aluno: aula_04_archives$ ./gradlew run --args "Gian"
+OláGian
+aluno: aula_04_archives$ ./gradlew run --args "Gian"
+Olá Gian
+aluno: aula_04_archives$ gedid ~/teste.txt
+Comando 'gedid' não encontrado, você quis dizer:
+  comando 'gedit' do snap gedit (46.1)
+  comando 'gedit' do deb gedit
+Veja 'snap info <snapname>' para versões adicionais.
+aluno: aula_04_archives$ gedit ~/teste.txt
+aluno: aula_04_archives$ ./gradlew run < ~/texte.txt
+bash: /home/aluno/texte.txt: Arquivo ou diretório inexistente
+aluno: aula_04_archives$ ./gradlew run < ~/texte.txt
+bash: /home/aluno/texte.txt: Arquivo ou diretório inexistente
+aluno: aula_04_archives$ ./gradlew run < ~/texte.txt
+bash: /home/aluno/texte.txt: Arquivo ou diretório inexistente
+aluno: aula_04_archives$ ./gradlew run < texte.txt
+bash: texte.txt: Arquivo ou diretório inexistente
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+aluno: aula_04_archives$ 
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+aluno: aula_04_archives$ cat ~/teste.txt
+whauihadufhzshldfiugha
+alsjdhsajfga.jhewuidjlfnlascn
+asdijaiojqwklmdklead]flakopwka
+dfjaoisjdfikojwjwrioçjwagrio guwrapnv9ewyfhaweuoç
+ncvjsdphaufiohwerna
+saefjiiowaefac
+sdko
+sdfsdfjklsdfjklsdfjkl
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+WHAUIHADUFHZSHLDFIUGHA
+ALSJDHSAJFGA.JHEWUIDJLFNLASCN
+ASDIJAIOJQWKLMDKLEAD]FLAKOPWKA
+DFJAOISJDFIKOJWJWRIOÇJWAGRIO GUWRAPNV9EWYFHAWEUOÇ
+NCVJSDPHAUFIOHWERNA
+SAEFJIIOWAEFAC
+SDKO
+SDFSDFJKLSDFJKLSDFJKL
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+/home/aluno/aula_04_archives/app/src/main/java/engtelecom/poo/App.java:26: error: ')' or ',' expected
+            System.out.println("Linha " + n + ": " aux.toUpperCase());
+                                                  ^
+/home/aluno/aula_04_archives/app/src/main/java/engtelecom/poo/App.java:26: error: ';' expected
+            System.out.println("Linha " + n + ": " aux.toUpperCase());
+                                                                    ^
+2 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+BUILD FAILED in 422ms
+aluno: aula_04_archives$ 
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+Linha 1: WHAUIHADUFHZSHLDFIUGHA
+Linha 1: ALSJDHSAJFGA.JHEWUIDJLFNLASCN
+Linha 1: ASDIJAIOJQWKLMDKLEAD]FLAKOPWKA
+Linha 1: DFJAOISJDFIKOJWJWRIOÇJWAGRIO GUWRAPNV9EWYFHAWEUOÇ
+Linha 1: NCVJSDPHAUFIOHWERNA
+Linha 1: SAEFJIIOWAEFAC
+Linha 1: SDKO
+Linha 1: SDFSDFJKLSDFJKLSDFJKL
+aluno: aula_04_archives$ ./gradlew run < ~/teste.txt
+Linha 1: WHAUIHADUFHZSHLDFIUGHA
+Linha 2: ALSJDHSAJFGA.JHEWUIDJLFNLASCN
+Linha 3: ASDIJAIOJQWKLMDKLEAD]FLAKOPWKA
+Linha 4: DFJAOISJDFIKOJWJWRIOÇJWAGRIO GUWRAPNV9EWYFHAWEUOÇ
+Linha 5: NCVJSDPHAUFIOHWERNA
+Linha 6: SAEFJIIOWAEFAC
+Linha 7: SDKO
+Linha 8: SDFSDFJKLSDFJKLSDFJKL
+aluno: aula_04_archives$ 
