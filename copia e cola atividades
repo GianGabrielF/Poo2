@@ -1,0 +1,5 @@
+git config --global user.name "GG"
+
+git config --global user.email gian.s12@aluno.ifsc.edu.br
+
+git clone https://github.com/GianGabrielF/Poo2
