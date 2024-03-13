@@ -10,6 +10,25 @@ public class Caneta {
         tampa = !tampa;
     }
 
+    //método chamado só na hora do new
+    public Caneta(String cor, int tinta) {
+        this.tinta = 100;
+        this.definirTinta(tinta);
+        this.tampa = false;
+        this.cor = cor;
+    }
+
+    public Caneta(String cor) {
+        this(cor,100);
+    }
+
+    
+
+
+    public Caneta() {
+        this("preto");
+    }
+
     public void desenhar(){
         if((tampa) && (tinta >0)){
             System.out.println("desenhando na cor " + cor);
@@ -22,7 +41,9 @@ public class Caneta {
     }
 
     public void definirTinta(int n){
-        tinta =n;
+        if(n>=0 && n<=100){
+            tinta =n;
+        }
     }
 
     
