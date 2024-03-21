@@ -11,6 +11,31 @@ public class App {
 
         System.out.println(h.toString());
 
+        h.setHora(20);
+        h.setMinuto(100);
+        h.setSegundo(14);
+
+        System.out.println(h.toString());
+
+        System.out.println(h.horaPorExtenso());
+
+        h.setHora(12);
+        h.setMinuto(35);
+        h.setSegundo(59);
+
+        System.out.println(h.horaPorExtenso());
+//
+//        h.setHora(1);
+//        h.setSegundo(1);
+//
+//        System.out.println(h.horaPorExtenso());
+
+        System.out.println("esse horário tem " + h.hrSegundos() + " segundos");
+
+        Horario g = new Horario(13,15,2);
+
+        System.out.println("a diferenca em segundos entre os horários é " + h.diferenca(g));
+
         
     }
 }
