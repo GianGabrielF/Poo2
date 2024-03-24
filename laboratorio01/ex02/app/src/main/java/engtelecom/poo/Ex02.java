@@ -3,7 +3,7 @@
  */
 package engtelecom.poo;
 
-public class App {
+public class Ex02 {
 
     public static void main(String[] args) {
 
