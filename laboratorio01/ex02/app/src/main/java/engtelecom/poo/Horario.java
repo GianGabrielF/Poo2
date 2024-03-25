@@ -26,9 +26,10 @@ public class Horario {
     public boolean setHora(int hora) {
         if(hora >=0 && hora <24){
             this.hora=hora;
+            return true;
         }
-
-        return (hora >=0 && hora <24);
+        return false;
+       
     }
 
     public boolean setMinuto(int minuto) {
@@ -49,7 +50,7 @@ public class Horario {
 
     @Override
     public String toString() {
-        return String.format("%02d", this.hora) + ":" + String.format("%02d", this.minuto) + ":" + String.format("%02d", this.segundo);
+        return String.format("%02d:%02d:%02d", this.hora,this.minuto,this.segundo);
     }
 
     private String porExtenso(int i, boolean genero){
@@ -69,7 +70,7 @@ public class Horario {
                     s = casosEspeciais[i - 10];
                 } else {
                     int d = i / 10;
-                    int u = i - (d * 10);
+                    int u = i%10;
                     if (u == 0) {
                         s = dezenas[d-2];
                     } else {

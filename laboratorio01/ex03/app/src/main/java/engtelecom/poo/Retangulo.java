@@ -9,7 +9,7 @@ public class Retangulo {
     public Retangulo(int largura, int altura, String tipo) {
         this.largura = (largura> 0)?largura:4;
         this.altura = (altura>0)?altura:3;
-        this.tipo = (tipo == "ASCII" || tipo == "UTF8")?tipo:"ASCII";
+        this.tipo = (tipo.equals("ASCII") || tipo.equals("UTF8"))?tipo:"ASCII";
     }
 
     public Retangulo(String tipo){
@@ -66,8 +66,9 @@ public class Retangulo {
     public boolean setLargura(int largura) {
         if(largura>0) {
             this.largura = largura;
+            return true;
         }
-        return largura>0;
+        return false;
     }
 
     public int getAltura() {
@@ -77,8 +78,9 @@ public class Retangulo {
     public boolean setAltura(int altura) {
         if(altura>0){
             this.altura = altura;
+            return true;
         }
-        return altura>0;
+        return false;
     }
 
     public String getTipo() {
@@ -88,8 +90,9 @@ public class Retangulo {
     public boolean setTipo(String tipo) {
         if (tipo == "ASCII" || tipo == "UTF8") {
             this.tipo = tipo;
+            return true;
         }
-        return (tipo == "ASCII" || tipo == "UTF8");
+        return false;
     }
 
     public int area(){
