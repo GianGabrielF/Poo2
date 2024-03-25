@@ -6,7 +6,9 @@ package engtelecom.poo;
 public class Ex04 {
 
     public static void main(String[] args) {
+        Data d = new Data();
 
+        System.out.println(d);
         
     }
 }
