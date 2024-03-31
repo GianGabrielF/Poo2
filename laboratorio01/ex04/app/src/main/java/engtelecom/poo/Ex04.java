@@ -6,9 +6,16 @@ package engtelecom.poo;
 public class Ex04 {
 
     public static void main(String[] args) {
-        Data d = new Data();
+        Data d = new Data(12,8,2024);
 
         System.out.println(d);
-        
+
+        Data e = new Data();
+
+        System.out.println(e);
+
+        System.out.println(d.diffDias(e));
+        System.out.println(e.diffDias(d));
+
     }
 }

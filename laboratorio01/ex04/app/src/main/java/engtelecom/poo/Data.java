@@ -5,7 +5,7 @@ public class Data {
     private int dia;
     private int mes;
     private int ano;
-    
+
     public Data(int dia,int mes,int ano){
 
         this.ano = ano;
@@ -25,7 +25,7 @@ public class Data {
     private int mesDias(int month){
         if(month==2){
             return(this.isBissexto())?29:28;
-        } else {    
+        } else {
             return (month<=7)?((month%2 != 0)?31:30):((month%2 == 0)?31:30);
         }
     }
@@ -61,8 +61,8 @@ public class Data {
     public boolean setMes(int mes) {
         if(mes>0 && mes <=12){
             if(this.dia<=mesDias(mes)){
-            this.mes = mes;
-            return true;
+                this.mes = mes;
+                return true;
             }
         }
         return false;
@@ -83,15 +83,15 @@ public class Data {
     public String toString() {
         return String.format("%02d/%02d/%04d",this.dia,this.mes,this.ano);
     }
-    
+
     public String porExtenso(){
         String[] mes = {"janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"};
 
         return this.dia + " de " + mes[this.mes] + " de " + this.ano;
-    }    
+    }
 
     private int comparaData(Data d1,Data d2){
-        
+
         if(d1.getAno()>d2.getAno()){
             return 1;//d1>d2
         }
@@ -100,7 +100,7 @@ public class Data {
         }
         if(d1.getMes()>d2.getMes()){
             return 1;
-        } 
+        }
         if(d1.getMes()<d2.getMes()){
             return -1;
         }
@@ -113,37 +113,38 @@ public class Data {
         return 0;//d1==d2
 
     }
-
-    public int diffDias(Data d2){
-        int dif;
-
-        if(this.mes == d2.getMes() && this.ano == d2.getAno()){
-            return Math.abs(this.dia - d2.getDia());
-        } else if (this.ano == d2.getAno()){
-            if(comparaData(this, d2)==1){
-                dif = mesDias(d2.getMes()) - d2.getDia();
-                for(int i= d2.getMes()+1; i<this.mes;i++){
-                    dif+=mesDias(i);
-                }
-                dif+=this.dia;
-                return dif;
-            } else {
-                if(comparaData(this, d2)==-1){
-                    dif = mesDias(this.mes) - this.dia;
-                    for(int i= this.mes+1; i<d2.getMes();i++){
-                        dif+=mesDias(i);
-                    }
-                    dif+=d2.getDia();
-                    return dif;
-                }
-            }
-
-        } else {
-            if
-        }
+    private void setEqual(Data dataChanged, Data dataParameter){
+        dataChanged.setAno(dataParameter.getAno());
+        dataChanged.setMes(dataParameter.getMes());
+        dataChanged.setDia(dataParameter.getDia());
     }
 
-    
+    public int diffDias(Data d2){
+        Data e0 = new Data();
+        int d=0;
+        if(comparaData(this,d2)==1){
+            setEqual(e0,d2);
+        } else if (comparaData(this,d2)==-1){
+            setEqual(e0,this);
+        } else {
+            return 0;
+        }
+        while(comparaData(e0,(comparaData(this,d2)==1)?this:d2)!= 0){
+            d++;
+            if(!e0.setDia(e0.getDia()+1)){
+                e0.setDia(1);
+                if(!e0.setMes(e0.getMes()+1)){
+                    e0.setMes(1);
+                    e0.setAno(e0.getAno()+1);
+                }
+            }
+        }
+        return d;
+    }
 
-    
+
+
+
+
+
 }
