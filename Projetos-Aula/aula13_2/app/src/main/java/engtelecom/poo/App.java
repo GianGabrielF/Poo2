@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class App {
     HashMap<String, Aluno> bancoDeDados = new HashMap<>();
     Scanner teclado = new Scanner(System.in);
+    DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public App(){
         this.bancoDeDados = new HashMap<>();
@@ -30,16 +31,17 @@ public class App {
     }
 
     public boolean cadastrar(){
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String nome = this.teclado.nextLine();
         long matricula = teclado.nextLong();
+        String email = this.teclado.nextLine();
+        String curso = this.teclado.nextLine();
         int year = teclado.nextInt();
         int mes = teclado.nextInt();
         int dia = teclado.nextInt();
         LocalDate aniv = LocalDate.of(year,mes,dia);
-        String nome = this.teclado.nextLine();
-        String email = this.teclado.nextLine();
-        String curso = this.teclado.nextLine();
         String cpf = this.teclado.nextLine();
+    
 
         Aluno a = new Aluno(nome, matricula, email, curso, aniv, cpf);
         if(bancoDeDados.containsKey(a.getId())){
