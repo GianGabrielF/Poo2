@@ -6,8 +6,9 @@ public class Carro {
     private Motor motor;
     private String cor;
     
-    public Carro(String nome, Motor motor) {
+    public Carro(String nome,String cor, Motor motor) {
         this.nome = nome;
+        this.cor = cor;
         this.motor = motor;
     }
 
