@@ -35,6 +35,16 @@ public class Contato {
     }
 
 
+    public HashMap<String, Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public HashMap<String, Email> getEmails() {
+        return emails;
+    }
+
+    public Email
+
     public Boolean adicionaTelefone(Telefone telefone,String rotulo){
             if(!this.telefones.containsKey(rotulo)){
                 this.telefones.put(rotulo, telefone);
@@ -43,6 +53,30 @@ public class Contato {
                 return false;
             }
          
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public LocalDate getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(LocalDate dataNasc) {
+        this.dataNasc = dataNasc;
     }
 
     
