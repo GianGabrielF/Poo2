@@ -35,15 +35,35 @@ public class Contato {
     }
 
 
-    public HashMap<String, Telefone> getTelefones() {
+    public HashMap<String, Telefone> getListaTelefones() {
         return telefones;
     }
 
-    public HashMap<String, Email> getEmails() {
+    public HashMap<String, Email> getListaEmails() {
         return emails;
     }
 
-    public Email
+    public Email getEmail(String rotulo){
+        return this.emails.get(rotulo);
+    }
+
+    public Telefone getTelefone(String rotulo){
+        return this.telefones.get(rotulo);
+    }
+
+    public boolean alteraEmail(String rotulo,Email email){
+        if(email.isValid()){
+            if(this.emails.containsKey(rotulo)){
+            this.emails.remove(rotulo);
+            this.emails.put(rotulo, email);
+            return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
     public Boolean adicionaTelefone(Telefone telefone,String rotulo){
             if(!this.telefones.containsKey(rotulo)){
@@ -53,6 +73,17 @@ public class Contato {
                 return false;
             }
          
+    }
+
+    public boolean alteraTelefone(String rotulo,Telefone telefone){
+            if(this.telefones.containsKey(rotulo)){
+            this.telefones.remove(rotulo);
+            this.telefones.put(rotulo, telefone);
+            return true;
+            } else {
+                return false;
+            }
+        
     }
 
     public String getNome() {
@@ -79,6 +110,39 @@ public class Contato {
         this.dataNasc = dataNasc;
     }
 
+    public boolean removeEmail(String rotulo){
+        if(this.emails.containsKey(rotulo)){
+            this.emails.remove(rotulo);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean removeTelefone(String rotulo){
+        if(this.telefones.containsKey(rotulo)){
+            this.telefones.remove(rotulo);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Contato:\nnome: " + nome + " " + sobrenome + "\nAniversario: " + dataNasc + "\ntelefones: "
+                + telefones + "\nemails: " + emails;
+    }
+
+    // private boolean altera(HashMap<String, Object> hash,String rotulo, Object replace){
+    //     if(hash.containsKey(rotulo)){
+    //         hash.remove(rotulo);
+    //         hash.put(rotulo, replace);
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     
     
 

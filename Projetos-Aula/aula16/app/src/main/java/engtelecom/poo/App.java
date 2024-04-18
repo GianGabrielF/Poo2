@@ -3,12 +3,31 @@
  */
 package engtelecom.poo;
 
+import java.time.LocalDate;
+import java.util.HashMap;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        LocalDate d = LocalDate.of(2000, 12, 02);
+        Telefone i = new Telefone("48997104826");
+        Telefone j = new Telefone("48997104384");
+        Telefone k = new Telefone("48923604826");
+
+        Email l = new Email("abc@gmail.com");
+        Email m = new Email("jkl@ifsc.edu.br");
+
+        HashMap<String,Telefone> lista1 = new HashMap<>();
+        lista1.put("ab", i);
+        lista1.put("jk", j);
+        lista1.put("lm",k);
+
+        HashMap<String,Email> lista2 = new HashMap<>();
+
+        lista2.put("ab",l);
+        lista2.put("jk",m);
+        Contato c = new Contato("Joao", "Miranda",d , lista1, lista2);
+
+        System.out.println(c);
     }
 }
