@@ -32,6 +32,8 @@ public class App {
 
         App app = new App();
 
+        int opcao = teclado.nextInt();
+
 
 
         
