@@ -5,5 +5,4 @@ package engtelecom.poo;
 
 
 class AppTest {
-    @Test void appHasAGreeting() {
 }

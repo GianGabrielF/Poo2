@@ -24,8 +24,10 @@ public class Telefone{
     public String toString() {
         String resultado = null;
         try {
-            MaskFormatter mask = new MaskFormatter("(##) #####−####");
-            resultado = mask.valueToString(this.valor)
+            MaskFormatter mask = new MaskFormatter("(##)#####-####");
+            mask.setValueContainsLiteralCharacters(false);
+            mask.setPlaceholderCharacter('_');
+            resultado = mask.valueToString(this.valor);
 
         } catch (ParseException e){
             e.printStackTrace();

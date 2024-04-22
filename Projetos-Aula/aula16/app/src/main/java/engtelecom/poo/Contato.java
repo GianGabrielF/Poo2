@@ -11,13 +11,12 @@ public class Contato {
     private HashMap<String , Telefone > telefones ;
     private HashMap<String , Email > emails;
 
-    public Contato(String nome, String sobrenome, LocalDate dataNasc, HashMap<String, Telefone> telefones,
-            HashMap<String, Email> emails) {
+    public Contato(String nome, String sobrenome, LocalDate dataNasc) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.dataNasc = dataNasc;
-        this.telefones = telefones;
-        this.emails = emails;
+        this.telefones = new HashMap<>();
+        this.emails = new HashMap<>();
     }
 
     public Boolean adicionaEmail(Email email,String rotulo){
@@ -130,7 +129,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Contato:\nnome: " + nome + " " + sobrenome + "\nAniversario: " + dataNasc + "\ntelefones: "
+        return "nome: " + nome + " " + sobrenome + "\nAniversario: " + dataNasc + "\ntelefones: "
                 + telefones + "\nemails: " + emails;
     }
 
@@ -144,6 +143,6 @@ public class Contato {
     //     }
     // }
     
-    
+
 
 }

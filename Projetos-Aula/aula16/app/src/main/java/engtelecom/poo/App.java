@@ -5,29 +5,102 @@ package engtelecom.poo;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class App {
 
+    private Scanner teclado = new Scanner(System.in);
+    private Agenda agenda;
+
+    public App(){
+        this.teclado = new Scanner(System.in);
+        this.agenda = new Agenda();
+
+    }
+
+    public void menu(){
+        System.out.println("..:AGENDA DIGITAL:..");
+        System.out.println("1->Adicionar Contato");
+        System.out.println("2->Atualizar Contato");
+        System.out.println("3->Remover Contato");
+        System.out.println("4->Mostrar dados de um Contato");
+        System.out.println("5->Mostrar dados de todos os contatos");
+        System.out.println("6->Sair");
+    }
+
     public static void main(String[] args) {
-        LocalDate d = LocalDate.of(2000, 12, 02);
-        Telefone i = new Telefone("48997104826");
-        Telefone j = new Telefone("48997104384");
-        Telefone k = new Telefone("48923604826");
 
-        Email l = new Email("abc@gmail.com");
-        Email m = new Email("jkl@ifsc.edu.br");
+        App app = new App();
 
-        HashMap<String,Telefone> lista1 = new HashMap<>();
-        lista1.put("ab", i);
-        lista1.put("jk", j);
-        lista1.put("lm",k);
 
-        HashMap<String,Email> lista2 = new HashMap<>();
 
-        lista2.put("ab",l);
-        lista2.put("jk",m);
-        Contato c = new Contato("Joao", "Miranda",d , lista1, lista2);
-
-        System.out.println(c);
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// LocalDate d = LocalDate.of(2000, 12, 02);
+        // Telefone i = new Telefone("48997104826");
+        // Telefone j = new Telefone("48997104384");
+        // Telefone k = new Telefone("48923604826");
+
+        // Email l = new Email("abc@gmail.com");
+        // Email m = new Email("jkl@ifsc.edu.br");
+
+        // HashMap<String,Telefone> lista1 = new HashMap<>();
+        // lista1.put("ab", i);
+        // lista1.put("jk", j);
+        // lista1.put("lm",k);
+
+        // HashMap<String,Email> lista2 = new HashMap<>();
+
+        // lista2.put("ab",l);
+        // lista2.put("jk",m);
+        // Contato c = new Contato("Joao", "Miranda",d , lista1, lista2);
+
+        // System.out.println(c);
