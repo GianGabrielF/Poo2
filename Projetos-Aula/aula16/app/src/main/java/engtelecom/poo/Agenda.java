@@ -33,7 +33,7 @@ public class Agenda {
         //     return true;
         // } else {
         //     return false;
-        // }
+        // }ArrayList
         if(!this.contatos.contains(contato)){
             return false;
         }
@@ -77,11 +77,16 @@ public class Agenda {
         StringBuilder toS = new StringBuilder("Agenda:\n");
         this.contatos.forEach(e->{
             toS.append(e.toString());
+            toS.append("\n");
         });
         
         return toS.toString();
 
     }
+
+    // public void procura(String nome){
+
+    // }
 
 
 }

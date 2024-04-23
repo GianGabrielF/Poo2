@@ -6,6 +6,7 @@ package engtelecom.poo;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
 
@@ -28,11 +29,53 @@ public class App {
         System.out.println("6->Sair");
     }
 
+    public void mostraDados(){
+        System.out.println("Qual o nome do contato?");
+        String n = this.teclado.nextLine();
+        ArrayList<Contato> nomes = new ArrayList<>();
+        Contato c;
+        agenda.getContatos().forEach(e -> {
+            if(e.getNome().equals(n)){
+                nomes.add(n);
+            }
+        });
+        if (nomes.size() > 1) {
+            System.out.println("qual o sobrenome");
+            String s = this.teclado.nextLine();
+            nomes.forEach(e-> {
+                if(e.getSobrenome().equals(s)){
+                    c = e;
+                }
+            });
+        } else {
+            c = nomes.get(0);
+        }
+        System.out.println(c);
+
+
+    }
+
+    public void todosOsDados(){
+        System.out.println(this.agenda);
+    }
+
     public static void main(String[] args) {
 
         App app = new App();
 
-        int opcao = teclado.nextInt();
+        int opcao = app.teclado.nextInt();
+
+        while(opcao!=6){
+            app.menu();
+            switch(opcao){
+                case1->app.addContato();
+                case2->app.updateContato();
+                case3->app.removeContato();
+                case4->app.mostraDados();
+                case5->app.todosOsDados();
+            }
+            opcao = app.teclado.nextInt();
+        }
 
 
 
