@@ -29,28 +29,160 @@ public class App {
         System.out.println("6->Sair");
     }
 
-    public void mostraDados(){
-        System.out.println("Qual o nome do contato?");
-        String n = this.teclado.nextLine();
-        ArrayList<Contato> nomes = new ArrayList<>();
-        Contato c;
-        agenda.getContatos().forEach(e -> {
-            if(e.getNome().equals(n)){
-                nomes.add(n);
-            }
-        });
-        if (nomes.size() > 1) {
-            System.out.println("qual o sobrenome");
-            String s = this.teclado.nextLine();
-            nomes.forEach(e-> {
-                if(e.getSobrenome().equals(s)){
-                    c = e;
-                }
-            });
-        } else {
-            c = nomes.get(0);
+    public String listaContatos(){
+        StringBuilder list = new StringBuilder("lista:"); 
+        for(Contato c: this.agenda.getContatos()){
+            list.append("\n");
+            list.append((this.agenda.getContatos().indexOf(c)+ 1) + ". " + c.getNome() + " " + c.getSobrenome());
         }
-        System.out.println(c);
+
+        return list.toString();
+    }
+
+    public boolean pesquisa(String nome, String sobrenome){
+        System.out.println("Pesquisar por contatos:");
+        System.out.println("1.Pesquisa manual");
+        System.out.println("2.lista contatos \n \n");
+        int i = this.teclado.nextInt();
+
+        switch(i){
+            case 1-> {
+                System.out.println("Qual o nome do contato?");
+                String n = this.teclado.nextLine();
+                System.out.println("qual o sobrenome?");
+                String s = this.teclado.nextLine();
+                for(Contato c: this.agenda.getContatos()){
+                    if(c.getNome().equals(n) && c.getSobrenome().equals(s)){
+                        nome=c.getNome();
+                        sobrenome=c.getSobrenome();
+                        return true;
+                    }
+                }
+                return false ;
+            }
+            case 2 -> {
+                listaContatos();
+                System.out.println();
+                System.out.println("\nEscolher numero do contato");
+                i = this.teclado.nextInt()-1;
+                if(i < 0 || i > this.agenda.getContatos().size()){
+                    return false;
+                }
+                nome=this.agenda.getContatos().get(i).getNome();
+                sobrenome=this.agenda.getContatos().get(i).getSobrenome();
+                return true;
+
+            }
+            default -> {
+                return false;
+            }
+        }
+    }
+
+    public void addContato(){
+        System.out.println("nome:");
+        String nome = this.teclado.nextLine();
+        System.out.println("sobrenome:");
+        String sobrenome = this.teclado.nextLine();
+        System.out.println("Data de Nascimento: \ndia:");
+        int dia = this.teclado.nextInt();
+        System.out.println("mes:");
+        int mes = this.teclado.nextInt();
+        System.out.println("ano:");
+        int ano = this.teclado.nextInt();
+        LocalDate dNasc = LocalDate.of(ano, mes, dia);
+        Contato c = new Contato(nome, sobrenome, dNasc);
+        this.agenda.addContato(c);
+
+        System.out.println("Adicionar email? (S/N)");
+        while(this.teclado.nextLine().equalsIgnoreCase("S")){
+            System.out.print("email: ");
+            Email email = new Email(this.teclado.nextLine());
+            System.out.print("rotulo do email: ");
+            String rotulo = this.teclado.nextLine();
+            if(this.agenda.addEmail(c, rotulo, email)){
+                System.out.println("adicionado com sucesso. ");
+            } else {
+                System.out.println("email invalido.");
+            }
+            System.out.println("Adicionar email? (S/N)");
+        }
+
+        System.out.println("Adicionar telefone? (S/N)");
+        while(this.teclado.nextLine().equalsIgnoreCase("S")){
+            System.out.print("telefone: ");
+            Telefone email = new Telefone(this.teclado.nextLine());
+            System.out.print("rotulo do email: ");
+            String rotulo = this.teclado.nextLine();
+            if(this.agenda.addTelefone(c, rotulo, email)){
+                System.out.println("adicionado com sucesso. ");
+            } else {
+                System.out.println("telefone com rotulo ja existente,nao adicionado.");
+            }
+            System.out.println("Adicionar telefone? (S/N)");
+        }
+    }
+
+    public void updateContato(){
+        String n=null;
+        String s=null;
+        pesquisa(n, s);
+
+        System.out.println("Alterar o que?");
+        System.out.println("1.nome");
+        System.out.println("2.Sobrenome");
+        System.out.println("3.Data de Nascimento");
+        System.out.println("4.Email");
+        System.out.println("5.Telefone");
+        System.out.println("6.sair");
+
+    }
+
+    public void mostraDados(){
+        String n=null;
+        String s=null;
+        pesquisa(n,s);
+        
+        for(Contato c:this.agenda.getContatos()){
+            if(c.getNome().equals(n) && c.getSobrenome().equals(s)){
+                System.out.println(c);
+            }
+        }
+
+        // for(Contato c:this.agenda.getContatos()){
+        //     int i=0;
+        //     if(c.getNome().equals(n)){
+        //         i++;
+        //         if(i>1){
+        //             if(c.getSobrenome().equals(s)){
+        //                 System.out.println(c);
+        //             } else {
+        //                 System.out.println(c);
+        //             }
+        //         }
+        //     }
+        // }
+
+
+        // ArrayList<Contato> nomes = new ArrayList<>();
+        // Contato c;
+        // agenda.getContatos().forEach(e -> {
+        //     if(e.getNome().equals(n)){
+        //         nomes.add(e);
+        //     }
+        // });
+        // if (nomes.size() > 1) {
+        //     System.out.println("qual o sobrenome");
+        //     String s = this.teclado.nextLine();
+        //     nomes.forEach(e-> {
+        //         if(e.getSobrenome().equals(s)){
+        //             c = new Contato(n, s, null);
+        //         }
+        //     });
+        // } else {
+        //     c = nomes.get(0);
+        // }
+        // System.out.println(c);
 
 
     }
@@ -68,11 +200,11 @@ public class App {
         while(opcao!=6){
             app.menu();
             switch(opcao){
-                case1->app.addContato();
-                case2->app.updateContato();
-                case3->app.removeContato();
-                case4->app.mostraDados();
-                case5->app.todosOsDados();
+                case 1->app.addContato();
+                case 2->app.updateContato();
+                case 3->app.removeContato();
+                case 4->app.mostraDados();
+                case 5->app.todosOsDados();
             }
             opcao = app.teclado.nextInt();
         }

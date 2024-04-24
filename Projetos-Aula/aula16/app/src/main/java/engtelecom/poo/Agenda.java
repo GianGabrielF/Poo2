@@ -18,12 +18,19 @@ public class Agenda {
         this.contatos = contatos;
     }
     
-    public void addContato (Contato contato){
-        this.contatos.add(contato);
+    public boolean addContato (Contato contato){
+        for(Contato e: contatos){
+            if(contato.getNome().equals(e.getNome())){
+                if(contato.getSobrenome().equals(e.getSobrenome())){
+                    return false;
+                }
+            }
+        }
+        return this.contatos.add(contato);
     }
 
-    public void removeContato (Contato contato){
-        this.contatos.removeIf(e->e.equals(contato));
+    public void removeContato (String nome, String sobrenome){
+        this.contatos.removeIf(e->e.getNome().equals(nome) && e.getSobrenome().equals(sobrenome));
     }
 
     public boolean addTelefone (Contato contato,String rotulo, Telefone telefone){
@@ -34,11 +41,8 @@ public class Agenda {
         // } else {
         //     return false;
         // }ArrayList
-        if(!this.contatos.contains(contato)){
-            return false;
-        }
-        this.contatos.get(this.contatos.indexOf(contato)).adicionaTelefone(telefone, rotulo);
-        return true;
+        return contato.adicionaTelefone(telefone, rotulo);
+        
     }
 
     public boolean addEmail (Contato contato,String rotulo, Email email){
@@ -49,27 +53,15 @@ public class Agenda {
         // } else {
         //     return false;
         // }
-        if(!this.contatos.contains(contato)){
-            return false;
-        }
-        this.contatos.get(this.contatos.indexOf(contato)).adicionaEmail(email, rotulo);
-        return true;
+        return contato.adicionaEmail(email, rotulo);
     }
 
     public boolean alteraTelefone (Contato contato,String rotulo, Telefone telefone){
-        if(!this.contatos.contains(contato)){
-            return false;
-        }
-        this.contatos.get(this.contatos.indexOf(contato)).alteraTelefone(rotulo, telefone);
-        return true;
+        return contato.alteraTelefone(rotulo, telefone);
     }
 
     public boolean alteraEmail(Contato contato,String rotulo, Email email){
-        if(!this.contatos.contains(contato)){
-            return false;
-        }
-        this.contatos.get(this.contatos.indexOf(contato)).alteraEmail(rotulo, email);
-        return true;
+        return contato.alteraEmail(rotulo, email);
     }
 
     @Override
