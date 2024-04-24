@@ -45,36 +45,33 @@ public class App {
         System.out.println("2.lista contatos \n \n");
         int i = this.teclado.nextInt();
 
-        switch(i){
-            case 1-> {
-                System.out.println("Qual o nome do contato?");
-                String n = this.teclado.nextLine();
-                System.out.println("qual o sobrenome?");
-                String s = this.teclado.nextLine();
-                for(Contato c: this.agenda.getContatos()){
-                    if(c.getNome().equals(n) && c.getSobrenome().equals(s)){
-                        // nome=c.getNome();
-                        // sobrenome=c.getSobrenome();
-                        return c;
+        while(true){
+            switch(i){
+                case 1-> {
+                    System.out.println("Qual o nome do contato?");
+                    String n = this.teclado.nextLine();
+                    System.out.println("qual o sobrenome?");
+                    String s = this.teclado.nextLine();
+                    for(Contato c: this.agenda.getContatos()){
+                        if(c.getNome().equals(n) && c.getSobrenome().equals(s)){
+                            // nome=c.getNome();
+                            // sobrenome=c.getSobrenome();
+                            return c;
+                        }
                     }
                 }
-                return null ;
-            }
-            case 2 -> {
-                listaContatos();
-                System.out.println();
-                System.out.println("\nEscolher numero do contato");
-                i = this.teclado.nextInt()-1;
-                if(i < 0 || i > this.agenda.getContatos().size()){
-                    return null;
-                }
-                // nome=this.agenda.getContatos().get(i).getNome();
-                // sobrenome=this.agenda.getContatos().get(i).getSobrenome();
-                return this.agenda.getContatos().get(i);
+                case 2 -> {
+                    listaContatos();
+                    System.out.println();
+                    System.out.println("\nEscolher numero do contato");
+                    i = this.teclado.nextInt()-1;
+                    // nome=this.agenda.getContatos().get(i).getNome();
+                    // sobrenome=this.agenda.getContatos().get(i).getSobrenome();
+                    return this.agenda.getContatos().get(i);
 
-            }
-            default -> {
-                return null;
+                }
+                default -> {
+                }
             }
         }
     }
@@ -156,8 +153,8 @@ public class App {
                 c.setDataNasc(novaData);   
             }
             case 4 -> {
-                System.out.println("\n1.Alterar Email");
-                System.out.println("2.Adicionar Email");
+                System.out.println("\n1.Adicionar Email");
+                System.out.println("2.Alterar Email");
                 int opcao2 = teclado.nextInt();
                 switch(opcao2){
                     case 1 -> {
@@ -171,10 +168,47 @@ public class App {
                             System.out.println("email invalido.");
                         }
                     }
+                    case 2 -> {
+                        System.out.println("Qual rotulo alterar?");
+                        System.out.println(c.getListaEmails());
+                        String rotulo = this.teclado.nextLine();
+                        System.out.println("Qual email voce quer por no lugar?");
+                        Email email = new Email(this.teclado.nextLine());
+                        this.agenda.alteraEmail(c, rotulo, email);
+
+                    }
                     default -> {
 
                     }
                 }
+
+            }
+            case 5 -> {System.out.println("\n1.Adicionar Telefone");
+            System.out.println("2.Alterar Telefone");
+            int opcao2 = teclado.nextInt();
+            switch(opcao2){
+                case 1 -> {
+                    System.out.print("Telefone: ");
+                    Telefone telefone = new Telefone(this.teclado.nextLine());
+                    System.out.print("rotulo do Telefone: ");
+                    String rotulo = this.teclado.nextLine();
+                    this.agenda.addTelefone(c, rotulo, telefone)
+                    System.out.println("adicionado com sucesso. ");
+                }
+                case 2 -> {
+                    System.out.println("Qual rotulo alterar?");
+                    System.out.println(c.getListaTelefones());
+                    String rotulo = this.teclado.nextLine();
+                    System.out.println("Qual email voce quer por no lugar?");
+                    Telefone telefone = new Telefone(this.teclado.nextLine());
+                    this.agenda.alteraTelefone(c, rotulo, telefone);
+
+                }
+                default -> {
+
+                }
+            }
+
 
             }
 
