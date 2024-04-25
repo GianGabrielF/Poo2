@@ -217,6 +217,13 @@ public class App {
 
     }
 
+    public void removeContato(){
+        Contato c = pesquisa();
+
+        this.agenda.removeContato(c.getNome(), c.getSobrenome());
+    }
+
+
     public void mostraDados(){
 
         System.out.println(pesquisa());
