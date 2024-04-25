@@ -49,9 +49,9 @@ public class App {
             switch(i){
                 case 1-> {
                     System.out.println("Qual o nome do contato?");
-                    String n = this.teclado.nextLine();
+                    String n = this.teclado.next();
                     System.out.println("qual o sobrenome?");
-                    String s = this.teclado.nextLine();
+                    String s = this.teclado.next();
                     for(Contato c: this.agenda.getContatos()){
                         if(c.getNome().equals(n) && c.getSobrenome().equals(s)){
                             // nome=c.getNome();
@@ -78,9 +78,11 @@ public class App {
 
     public void addContato(){
         System.out.println("nome:");
-        String nome = this.teclado.nextLine();
+        String nome;
+        nome = this.teclado.next();
+
         System.out.println("sobrenome:");
-        String sobrenome = this.teclado.nextLine();
+        String sobrenome = this.teclado.next();
         System.out.println("Data de Nascimento: \ndia:");
         int dia = this.teclado.nextInt();
         System.out.println("mes:");
@@ -92,11 +94,11 @@ public class App {
         this.agenda.addContato(c);
 
         System.out.println("Adicionar email? (S/N)");
-        while(this.teclado.nextLine().equalsIgnoreCase("S")){
+        while(this.teclado.next().equalsIgnoreCase("S")){
             System.out.print("email: ");
-            Email email = new Email(this.teclado.nextLine());
+            Email email = new Email(this.teclado.next());
             System.out.print("rotulo do email: ");
-            String rotulo = this.teclado.nextLine();
+            String rotulo = this.teclado.next();
             if(this.agenda.addEmail(c, rotulo, email)){
                 System.out.println("adicionado com sucesso. ");
             } else {
@@ -106,11 +108,11 @@ public class App {
         }
 
         System.out.println("Adicionar telefone? (S/N)");
-        while(this.teclado.nextLine().equalsIgnoreCase("S")){
+        while(this.teclado.next().equalsIgnoreCase("S") || !this.teclado.next().equalsIgnoreCase("N")){
             System.out.print("telefone: ");
-            Telefone email = new Telefone(this.teclado.nextLine());
+            Telefone email = new Telefone(this.teclado.next());
             System.out.print("rotulo do email: ");
-            String rotulo = this.teclado.nextLine();
+            String rotulo = this.teclado.next();
             if(this.agenda.addTelefone(c, rotulo, email)){
                 System.out.println("adicionado com sucesso. ");
             } else {
@@ -192,7 +194,7 @@ public class App {
                     Telefone telefone = new Telefone(this.teclado.nextLine());
                     System.out.print("rotulo do Telefone: ");
                     String rotulo = this.teclado.nextLine();
-                    this.agenda.addTelefone(c, rotulo, telefone)
+                    this.agenda.addTelefone(c, rotulo, telefone);
                     System.out.println("adicionado com sucesso. ");
                 }
                 case 2 -> {
@@ -239,6 +241,7 @@ public class App {
 
         App app = new App();
 
+        app.menu();
         int opcao = app.teclado.nextInt();
 
         while(opcao!=6){
