@@ -34,6 +34,7 @@ public class CarroTest {
         assertEquals(90, c.frear(10));
         assertEquals(90, c.frear(-20));
         assertEquals(0, c.frear(90));
+        assertEquals(0, c.frear(100));
     }
 
     @Test

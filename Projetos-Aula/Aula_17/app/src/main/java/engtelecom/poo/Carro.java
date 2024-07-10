@@ -9,7 +9,8 @@ public class Carro {
      * velocidade atual do Carro
      */
     private int velAtual;
-
+    private static final int VEL_MAX = 120;
+    private static final int VEL_MIN = 0;
 
     /**
      * Incrementa a velocidade do carro de acordo com o parametro
@@ -17,9 +18,12 @@ public class Carro {
      * @return
      */
     public int acelerar(int i){        
-        if(i>=0){
+        if(i>=VEL_MIN && i<= this.VEL_MAX - this.velAtual){
             this.velAtual+=i;
+        } else if (i>=this.VEL_MAX - this.velAtual) {
+            this.velAtual= this.VEL_MAX;
         }
+
         return this.velAtual;
     }
 
@@ -29,8 +33,10 @@ public class Carro {
      * @return
      */
     public int frear(int i){
-        if(i>=0 && i<=this.velAtual){
+        if(i>=VEL_MIN && i<=this.velAtual){
             this.velAtual-=i;
+        } else if(i> this.velAtual) {
+            this.velAtual=VEL_MIN;
         }
         return this.velAtual;
     }
