@@ -3,15 +3,70 @@
  */
 package engtelecom.poo;
 
+import engtelecom.poo.produtos.Celular;
+import engtelecom.poo.produtos.Telefone;
+import engtelecom.poo.produtos.SemFio;
+
 public class App {
 
     public static void main(String[] args) {
-        SemFio s = new SemFio(12344312, 123, "nokia", "azul", 30.0, null, 123.21, 2, 30.0);
 
-        Telefone t = new Telefone(512312, 123141, "sdasdasd", "azul", 22.2, null);
+        
 
-        System.out.println(s.imprimirDados());
-        System.out.println(t);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Telefone t = new Telefone();
+        // SemFio sF = new SemFio();
+        // Celular c = new Celular();
+
+        // Telefone a = new Celular();
+
+        // if (a instanceof Celular){
+        //     ( (Celular) a).getSistemaOperacional();
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // SemFio s = new SemFio(12344312, 123, "nokia", "azul", 30.0, null, 123.21, 2, 30.0);
+
+        // Telefone t = new Telefone(512312, 123141, "sdasdasd", "azul", 22.2, null);
+
+        // System.out.println(s.imprimirDados());
+        // System.out.println(t);
         
 
     }
