@@ -1,6 +1,6 @@
 package engtelecom.poo;
 
-public class Cavaleiro extends Personagem {
+public class Cavaleiro extends Personagem implements Guerreiro{
 
 
     public Cavaleiro(int v, int a, double vel) {

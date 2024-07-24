@@ -4,11 +4,14 @@
 package engtelecom.poo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+        Aldeao a = new Aldeao(30, 1, 0.8);
+        Personagem p = a;
+
+        a.mover();
+        p.mover();
+
+        a.coletarMadeira();
+        p.coletarMadeira();
 }

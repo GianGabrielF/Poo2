@@ -1,22 +1,36 @@
-// package engtelecom.poo;
+package engtelecom.poo;
 
-// public class Aldeao extends Personagem{
-//     public Aldeao(int v, int a, double vel) {
-//         super(v, a, vel);
-//         //TODO Auto-generated constructor stub
-//     }
-
-
-//     public String atacar(){
-//         return "Aldeao ataca";
-
-//     }
+public class Aldeao extends Personagem implements Guerreiro,Coletador{
+    public Aldeao(int v, int a, double vel) {
+        super(v, a, vel);
+        //TODO Auto-generated constructor stub
+    }
 
 
-//     public String mover(){
-//         return "Aldeao se move";
+    @Override
+    public String atacar(){
+        return "Aldeao ataca";
 
-//     } 
+    }
+
+    @Override
+    public String coletarOuro(){
+        return "Aldeao coleta";
+
+    }
+
+
+    @Override
+    public String coletarMadeira(){
+        return "Aldeao coleta";
+
+    }
+
+    @Override
+    public String mover(){
+        return "Aldeao se move";
+
+    } 
     
     
-// }
+}
